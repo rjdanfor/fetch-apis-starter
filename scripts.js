@@ -200,7 +200,7 @@ async function getWeather(location){
 			- also getting the current temperature and weather code
 			- temperature should be returned in Fahrenheit
 		*/
-	let endpoint = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=temperature_2m_max,temperature_2m_min,weather_code&forecast_days=8&current=temperature_2m,weather_code&timezone=auto&wind_speed_unit=mph&temperature_unit=fahrenheit&precipitation_unit=inch&forecast_days=8`; 
+	let endpoint = `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=temperature_2m_max,temperature_2m_min,weather_code&forecast_days=8&current=temperature_2m,weather_code&timezone=auto&wind_speed_unit=mph&temperature_unit=fahrenheit&precipitation_unit=inch`; 
 
 	// fetch call to API
 	fetch(endpoint)
@@ -222,7 +222,6 @@ window.addEventListener("load", function(){
 		document.getElementById("forecast").textContent = 'Geolocation is not supported by your browser';
 	} else {
 		navigator.geolocation.getCurrentPosition(getWeather);
-		// console.log(navigator.geolocation.getCurrentPosition())
 	}
 
 	// update the copyright year in the footer
